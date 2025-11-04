@@ -13,6 +13,9 @@
 -create signup user acc in firebase 
 - implemnted sign In user api 
 - created redux store with userslice 
+- Fetch Movies from TMDB API
+-Bug Fix: If the user is not loggin in redirect /browse to Login page and vice-versa 
+
 
 
 
