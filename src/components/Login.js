@@ -14,6 +14,8 @@ import { useDispatch } from 'react-redux';
 
 import { addUser } from '../utils/userSlice';
 
+import { USER_AVATAR } from '../utils/constants';
+
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
 
@@ -44,7 +46,7 @@ const Login = () => {
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
       .then((userCredential) => {
         const user = userCredential.user;
-        updateProfile(user, { displayName: name.current.value , photoURL: "https://avatars.githubusercontent.com/u/197416070?v=4"})
+        updateProfile(user, { displayName: name.current.value , photoURL: USER_AVATAR})
 
       .then(() => {
         const {uid,email,displayName,photoURL} = auth.currentUser;

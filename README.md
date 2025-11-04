@@ -17,5 +17,3 @@
 -Bug Fix: If the user is not loggin in redirect /browse to Login page and vice-versa 
 
 
-
-
