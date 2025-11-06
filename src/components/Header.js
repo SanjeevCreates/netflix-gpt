@@ -49,7 +49,7 @@ return () => unsubscribe();
        alt='user icon'
        className='w-12 h-12 '
       /> 
-      <button onClick={handleSignOut} className='font-bold'>(sign out)</button>
+      <button onClick={handleSignOut} className='font-bold text-white'>(sign out)</button>
       </div>)}
     </div>
 
