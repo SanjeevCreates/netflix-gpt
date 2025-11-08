@@ -1,12 +1,13 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utils/constants";
+import { useEffect } from "react";
 import { addNowPlayingMovies } from "../utils/moviesSlice";
 
 const useNowPlayingMovies = () => {
-  // Fetch Data from TMDB API and update store
+  //custom hook to fetch API from tmdb and update the value in redux store.
   const dispatch = useDispatch();
 
+  //add memoization
   const nowPlayingMovies = useSelector(
     (store) => store.movies.nowPlayingMovies
   );
@@ -17,15 +18,13 @@ const useNowPlayingMovies = () => {
       API_OPTIONS
     );
     const json = await data.json();
-    console.log(json);
-    
-    dispatch(addNowPlayingMovies(json.results));
+    //console.log(json?.results);
+    dispatch(addNowPlayingMovies(json?.results));
   };
 
   useEffect(() => {
+    //add condition for memoization
     !nowPlayingMovies && getNowPlayingMovies();
   }, []);
 };
-
 export default useNowPlayingMovies;
-
