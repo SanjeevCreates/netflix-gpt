@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { addGptMovieResult } from "../utils/gptSlice";
 import { API_OPTIONS, GEMINI_KEY } from "../utils/constants";
-import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai"; // ✅ Correct import
+import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 
 const safetySettings = [
   {
