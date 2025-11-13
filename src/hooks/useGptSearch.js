@@ -31,7 +31,7 @@ const useGptSearch = (searchText) => {
 
   const handleGptSearchClick = async () => {
     const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.5-flash",
       safetySettings: safetySettings, // ✅ passed correctly
     });
 
@@ -44,6 +44,8 @@ const useGptSearch = (searchText) => {
       const result = await model.generateContent(prompt);
       const response = await result.response;
       const text = await response.text();
+      console.log("🔍 Gemini raw output:", text);
+
 
       const gptMovies = text.split(",").map((m) => m.trim());
       const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
