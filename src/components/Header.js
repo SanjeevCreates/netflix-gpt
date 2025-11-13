@@ -26,6 +26,7 @@ const Header = () => {
         navigate("/error");
       });
   };
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -41,6 +42,7 @@ const Header = () => {
           })
         );
         navigate("/browse");
+        
         // ...
       } else {
         // User is signed out
