@@ -21,4 +21,6 @@ const usePopularMovies = () => {
     !popularMovies && getPopularMovies();
   }, []);
 };
+
+// exporting the custom hook
 export default usePopularMovies;
